@@ -1,0 +1,57 @@
+{
+  "name": "14.4",
+  "version": "1.0.0",
+  "description": "Kodilla task 14.8 - React: Gif search engine",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm-run-all test:js test:index",
+    "test:index": "html-validator --file=index.html --verbose",
+    "test:js": "jshint",
+    "init-project": "npm install && npm-run-all init:*",
+    "init:dirs": "mkdirp sass css vendor images js",
+    "init:files": "touch README.md index.html sass/style.scss js/script.js",
+    "init:gitignore": "curl https://raw.githubusercontent.com/github/gitignore/master/Node.gitignore -o .gitignore",
+    "start": "nodemon index.js",
+    "build": "npm-run-all build:* test",
+    "build:clean": "rimraf css/*.css",
+    "build:sass": "node-sass --output-style compact -o css sass",
+    "build:autoprefixer": "autoprefixer-cli css/style.css",
+    "build-dev:sass": "node-sass --output-style expanded --source-map true -o css sass",
+    "watch": "npm-run-all build -p watch:*",
+    "watch:validate": "onchange index.html -- npm-run-all test:index",
+    "watch:sassprefixer": "onchange -d 100 sass/style.scss -- npm-run-all -p sassprefixer:*",
+    "watch:browsersync": "browser-sync start --server --files css/*.css *.html",
+    "sassprefixer:sass": "node-sass --output-style expanded --source-map true -o css sass",
+    "sassprefixer:autoprefixer": "autoprefixer-cli -o css/style.prefixed.css css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arti-zachara/14.4-Gif-search-engine.git"
+  },
+  "keywords": [
+    "React",
+    "jsx",
+    "gif",
+    "search",
+    "engine"
+  ],
+  "author": "arti Zachara",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arti-zachara/14.4-Gif-search-engine/issues"
+  },
+  "homepage": "https://github.com/arti-zachara/14.4-Gif-search-engine#readme",
+  "devDependencies": {
+    "autoprefixer-cli": "^1.0.0",
+    "browser-sync": "^2.26.3",
+    "html-validator-cli": "^6.0.0",
+    "http-server": "^0.11.1",
+    "jshint": "^2.9.5",
+    "mkdirp": "^0.5.1",
+    "node-sass": "^4.11.0",
+    "npm-run-all": "^4.1.5",
+    "onchange": "^5.2.0",
+    "rimraf": "^2.6.3",
+    "sass-graph": "^3.0.4"
+  }
+}

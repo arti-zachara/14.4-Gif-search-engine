@@ -4,27 +4,33 @@ body {
   color: white;
   font-family: "Iceland", cursive;
 }
+
 h1 {
   font-family: "Orbitron", sans-serif;
   font-weight: 900;
   color: #e40b57;
 }
+
 p {
   color: #ff6620;
 }
+
 a {
   color: #ff810e;
   text-decoration: none;
   font-weight: 900;
 }
+
 input {
   height: 2rem;
   font-family: "Iceland", cursive;
   border: 2px solid #ff810e;
   padding-left: 5px;
   margin-bottom: 10px;
-  &:focus {
-    outline: none;
-    border: 3px solid #e40b57;
-  }
 }
+
+input:focus {
+  outline: none;
+  border: 3px solid #e40b57;
+}
+/*# sourceMappingURL=style.prefixed.css.map */

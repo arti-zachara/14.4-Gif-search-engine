@@ -4,7 +4,7 @@
   "description": "Kodilla task 14.8 - React: Gif search engine",
   "main": "index.js",
   "scripts": {
-    "test": "npm-run-all test:js test:index",
+    "test": "npm-run-all test:js",
     "test:index": "html-validator --file=index.html --verbose",
     "test:js": "jshint",
     "init-project": "npm install && npm-run-all init:*",
@@ -18,7 +18,6 @@
     "build:autoprefixer": "autoprefixer-cli css/style.css",
     "build-dev:sass": "node-sass --output-style expanded --source-map true -o css sass",
     "watch": "npm-run-all build -p watch:*",
-    "watch:validate": "onchange index.html -- npm-run-all test:index",
     "watch:sassprefixer": "onchange -d 100 sass/style.scss -- npm-run-all -p sassprefixer:*",
     "watch:browsersync": "browser-sync start --server --files css/*.css *.html",
     "sassprefixer:sass": "node-sass --output-style expanded --source-map true -o css sass",
